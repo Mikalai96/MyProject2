@@ -20,6 +20,7 @@ public:
 	
 private:
 
+
 	std::string title;
 	std::string	author;
 	int year;
