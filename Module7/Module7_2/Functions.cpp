@@ -1,6 +1,6 @@
-#include "Functions.h"
+п»ї#include "Functions.h"
 
-// Функция ввода пользователем данных для массива
+// Р¤СѓРЅРєС†РёСЏ РІРІРѕРґР° РїРѕР»СЊР·РѕРІР°С‚РµР»РµРј РґР°РЅРЅС‹С… РґР»СЏ РјР°СЃСЃРёРІР°
 void writeElement(int* array, int size)
 {
     std::cout << "Enter the number\n";
@@ -10,27 +10,27 @@ void writeElement(int* array, int size)
         std::cin >> array[i];
     }
 }
-// Функция для вычисления суммы всех элементов массива
+// Р¤СѓРЅРєС†РёСЏ РґР»СЏ РІС‹С‡РёСЃР»РµРЅРёСЏ СЃСѓРјРјС‹ РІСЃРµС… СЌР»РµРјРµРЅС‚РѕРІ РјР°СЃСЃРёРІР°
 void sumElem(const std::weak_ptr<int[]>& weakArray, int size, int& result) {
-    if (auto sharedArray = weakArray.lock()) // Преобразуем weak_ptr в shared_ptr
+    if (auto sharedArray = weakArray.lock()) // РџСЂРµРѕР±СЂР°Р·СѓРµРј weak_ptr РІ shared_ptr
     {
         result = 0;
         for (int i = 0; i < size; ++i) {
-            result = result + sharedArray[i]; // Доступ к элементам массива через shared_ptr
+            result = result + sharedArray[i]; // Р”РѕСЃС‚СѓРї Рє СЌР»РµРјРµРЅС‚Р°Рј РјР°СЃСЃРёРІР° С‡РµСЂРµР· shared_ptr
         }
     }
-    else // Если массив больше не доступен (shared_ptr был уничтожен)
+    else // Р•СЃР»Рё РјР°СЃСЃРёРІ Р±РѕР»СЊС€Рµ РЅРµ РґРѕСЃС‚СѓРїРµРЅ (shared_ptr Р±С‹Р» СѓРЅРёС‡С‚РѕР¶РµРЅ)
     {
         std::cerr << "Array is not available! \n";
-        result = 0; // Устанавливаем результат в 0
+        result = 0; // РЈСЃС‚Р°РЅР°РІР»РёРІР°РµРј СЂРµР·СѓР»СЊС‚Р°С‚ РІ 0
     }
     std::cout << "Sum: " << result << "\n";
 }
-// Функция для нахождения максимального и минимального элемента массива
+// Р¤СѓРЅРєС†РёСЏ РґР»СЏ РЅР°С…РѕР¶РґРµРЅРёСЏ РјР°РєСЃРёРјР°Р»СЊРЅРѕРіРѕ Рё РјРёРЅРёРјР°Р»СЊРЅРѕРіРѕ СЌР»РµРјРµРЅС‚Р° РјР°СЃСЃРёРІР°
 void MinMax(const std::weak_ptr<int[]>& weakArray, int size, int& maxValue, int& minValue) {
-    if (auto sharedArray = weakArray.lock()) { // Преобразуем weak_ptr в shared_ptr
-        minValue = sharedArray[0]; // Инициализируем минимум первым элементом
-        maxValue = sharedArray[0]; // Инициализируем максимум первым элементом
+    if (auto sharedArray = weakArray.lock()) { // РџСЂРµРѕР±СЂР°Р·СѓРµРј weak_ptr РІ shared_ptr
+        minValue = sharedArray[0]; // РРЅРёС†РёР°Р»РёР·РёСЂСѓРµРј РјРёРЅРёРјСѓРј РїРµСЂРІС‹Рј СЌР»РµРјРµРЅС‚РѕРј
+        maxValue = sharedArray[0]; // РРЅРёС†РёР°Р»РёР·РёСЂСѓРµРј РјР°РєСЃРёРјСѓРј РїРµСЂРІС‹Рј СЌР»РµРјРµРЅС‚РѕРј
 
         for (int i = 1; i < size; ++i)
         {
@@ -47,7 +47,7 @@ void MinMax(const std::weak_ptr<int[]>& weakArray, int size, int& maxValue, int&
     else
     {
         std::cerr << "Array is not available! \n";
-        minValue = 0; // Устанавливаем значения по умолчанию
+        minValue = 0; // РЈСЃС‚Р°РЅР°РІР»РёРІР°РµРј Р·РЅР°С‡РµРЅРёСЏ РїРѕ СѓРјРѕР»С‡Р°РЅРёСЋ
         maxValue = 0;
     }
     std::cout << "MinValue: " << minValue << " " << "MaxValue: " << maxValue << "\n";
