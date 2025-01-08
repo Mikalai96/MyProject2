@@ -1,18 +1,18 @@
-#include "ClassBook.h"
+п»ї#include "ClassBook.h"
 
 class Book
 {
 public:
-	// Конструктор по умолчанию
+	// РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РїРѕ СѓРјРѕР»С‡Р°РЅРёСЋ
 	Book() : title("Unknown"), author("Unknown"), year(0), ISBN(nullptr) {}
 
-	// Конструктор с параметрами
+	// РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ СЃ РїР°СЂР°РјРµС‚СЂР°РјРё
 	Book(const std::string& bTitle, const std::string& bAuthor, int bYear, const char* bISBN) : title(bTitle), author(bAuthor), year(bYear) {
 		ISBN = new char[strlen(bISBN) + 1];
 		strcpy_s(ISBN, strlen(bISBN) + 1, bISBN);
 	}
 
-	// Конструктор копирования
+	// РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РєРѕРїРёСЂРѕРІР°РЅРёСЏ
 	Book(const Book& other) : title(other.title), author(other.author), year(other.year) {
 		if (other.ISBN) {
 			ISBN = new char[strlen(other.ISBN) + 1];
@@ -22,7 +22,7 @@ public:
 			ISBN = nullptr;
 		}
 	}
-	// Геттеры 
+	// Р“РµС‚С‚РµСЂС‹ 
 	std::string getTitle() const {
 		return title;
 	}
@@ -35,14 +35,14 @@ public:
 	const char* getISBN() const {
 		return ISBN;
 	}
-	// Метод вывода инфо о книге
+	// РњРµС‚РѕРґ РІС‹РІРѕРґР° РёРЅС„Рѕ Рѕ РєРЅРёРіРµ
 	void printInfo() const {
 		std::cout << "Title: " << title << "\n"
 			<< "Author: " << author << "\n"
 			<< "Year: " << year << "\n"
 			<< "ISBN: " << ISBN << "\n";
 	}
-	// Деструктор
+	// Р”РµСЃС‚СЂСѓРєС‚РѕСЂ
 	~Book()
 	{
 		delete[] ISBN;

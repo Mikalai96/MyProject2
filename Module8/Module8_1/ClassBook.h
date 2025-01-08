@@ -1,4 +1,4 @@
-#pragma once
+п»ї#pragma once
 #include <iostream>
 #include <string>
 #include <cstring>
@@ -7,16 +7,16 @@ class Book
 {
 public:
 	
-	Book();// Конструктор по умолчанию
-	Book(const std::string& bTitle, const std::string& bAuthor, int bYear, const char* bISBN); // Конструктор с параметрами
-	Book(const Book& other);// Конструктор копирования
-	// Геттеры 
+	Book();// РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РїРѕ СѓРјРѕР»С‡Р°РЅРёСЋ
+	Book(const std::string& bTitle, const std::string& bAuthor, int bYear, const char* bISBN); // РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ СЃ РїР°СЂР°РјРµС‚СЂР°РјРё
+	Book(const Book& other);// РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РєРѕРїРёСЂРѕРІР°РЅРёСЏ
+	// Р“РµС‚С‚РµСЂС‹ 
 	std::string getTitle() const;
 	std::string getAuthor() const;
 	int getYear() const;
 	const char* getISBN() const;
-	void printInfo() const;// Метод вывода инфо о книге
-	~Book();// Деструктор
+	void printInfo() const;// РњРµС‚РѕРґ РІС‹РІРѕРґР° РёРЅС„Рѕ Рѕ РєРЅРёРіРµ
+	~Book();// Р”РµСЃС‚СЂСѓРєС‚РѕСЂ
 	
 private:
 
