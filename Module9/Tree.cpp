@@ -1,38 +1,27 @@
 #include "Tree.h"
-#include <iostream>
 #include <string>
+#include <iostream>
 #include <vector>
 
-class Tree
-{
-public:
-    enum class TreeType {
-        conifers,
-        deciduous
-    };
-    Tree(const std::string& name, TreeType type) : name(name), type(type) {
+int Tree::count = 0;
+
+
+    Tree::Tree(const std::string& name, TreeType type) : name(name), type(type) {
         id = ++count;
     }
-    Tree(const Tree& other) : name(other.name), type(other.type) {
+    Tree::Tree(const Tree& other) : name(other.name), type(other.type) {
         id = ++count;
     }
-    void wind() const {
+    void  Tree::wind() const {
         std::cout << "Tree " << name << " ID: " << id << std::endl;
     }
-    int getID() const {
+    int  Tree::getID() const {
         return id;
     }
-    const std::string& getName() const {
+    const std::string& Tree::getName() const {
         return name;
     }
-    static int getCount() {
+    int  Tree::getCount() {
         return count;
     }
-private:
 
-    std::string name;
-    TreeType type;
-    int id;
-    static int count;
-};
-int Tree::count = 0;
