@@ -1,8 +1,8 @@
-#include "Calculate.h"
+п»ї#include "Calculate.h"
 
 void calculate(const std::function<void()>& operation) {
     try {
-        operation(); // Выполнение переданной лямбды
+        operation(); // Р’С‹РїРѕР»РЅРµРЅРёРµ РїРµСЂРµРґР°РЅРЅРѕР№ Р»СЏРјР±РґС‹
     }
     catch (const std::invalid_argument& e) {
         std::cerr << "Invalid argument error: " << e.what() << std::endl;

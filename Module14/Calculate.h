@@ -1,9 +1,9 @@
-#pragma once
+п»ї#pragma once
 #include <iostream>
 #include <stdexcept>
 #include <cmath>
 #include <functional>
-// Пользовательское исключение для логарифма
+// РџРѕР»СЊР·РѕРІР°С‚РµР»СЊСЃРєРѕРµ РёСЃРєР»СЋС‡РµРЅРёРµ РґР»СЏ Р»РѕРіР°СЂРёС„РјР°
 class InvalidLogArgument : public std::exception {
 public:
     const char* what() const noexcept override {
@@ -11,7 +11,7 @@ public:
     }
 };
 
-// Пользовательское исключение для радиуса
+// РџРѕР»СЊР·РѕРІР°С‚РµР»СЊСЃРєРѕРµ РёСЃРєР»СЋС‡РµРЅРёРµ РґР»СЏ СЂР°РґРёСѓСЃР°
 class InvalidRadiusArgument : public std::exception {
 public:
     const char* what() const noexcept override {

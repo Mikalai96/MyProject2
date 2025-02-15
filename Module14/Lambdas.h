@@ -1,7 +1,7 @@
-#pragma once
+п»ї#pragma once
 #include <functional>
 
-// Объявление типов для лямбд
+// РћР±СЉСЏРІР»РµРЅРёРµ С‚РёРїРѕРІ РґР»СЏ Р»СЏРјР±Рґ
 extern std::function<void(double, double)> division;
 extern std::function<void(double)> squareRoot;
 extern std::function<void(double)> logarithm;
