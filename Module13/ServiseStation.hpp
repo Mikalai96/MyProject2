@@ -1,8 +1,8 @@
-#include "ServiceStation.h"
+п»ї#include "ServiceStation.h"
 
 template <typename T>
-ServiceStation<T>::ServiceStation(size_t limit) : limit(limit) {} // Конструктор для установки лимита
-// Метод AddCar: добавляет машину в СТО
+ServiceStation<T>::ServiceStation(size_t limit) : limit(limit) {} // РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РґР»СЏ СѓСЃС‚Р°РЅРѕРІРєРё Р»РёРјРёС‚Р°
+// РњРµС‚РѕРґ AddCar: РґРѕР±Р°РІР»СЏРµС‚ РјР°С€РёРЅСѓ РІ РЎРўРћ
 template <typename T>
 void ServiceStation<T>::AddCar(const T& car) {
     if (carsInService.size() < limit) {
@@ -13,7 +13,7 @@ void ServiceStation<T>::AddCar(const T& car) {
         std::cerr << "Error: Service station is full! Cannot add more cars." << std::endl;
     }
 }
-// Метод RepairAll: чинит все машины и перемещает их в гараж
+// РњРµС‚РѕРґ RepairAll: С‡РёРЅРёС‚ РІСЃРµ РјР°С€РёРЅС‹ Рё РїРµСЂРµРјРµС‰Р°РµС‚ РёС… РІ РіР°СЂР°Р¶
 template <typename T>
 void ServiceStation<T>::RepairAll() {
     if (carsInService.empty()) {
@@ -26,11 +26,11 @@ void ServiceStation<T>::RepairAll() {
         garage.AddToGarage(car);
     }
 
-    carsInService.clear(); // Очищаем список машин в сервисе
+    carsInService.clear(); // РћС‡РёС‰Р°РµРј СЃРїРёСЃРѕРє РјР°С€РёРЅ РІ СЃРµСЂРІРёСЃРµ
     std::cout << "All cars repaired and moved to the garage." << std::endl;
 }
 
-// Метод DisplayGarage: выводит список машин в гараже
+// РњРµС‚РѕРґ DisplayGarage: РІС‹РІРѕРґРёС‚ СЃРїРёСЃРѕРє РјР°С€РёРЅ РІ РіР°СЂР°Р¶Рµ
 template <typename T>
 void ServiceStation<T>::DisplayGarage() const {
     garage.DisplayAll();
@@ -44,7 +44,7 @@ void ServiceStation<T>::Garage::AddToGarage(const T& car) {
     repairedCars.push_back(car);
 }
 
-// Метод DisplayAll: выводит список машин в гараже
+// РњРµС‚РѕРґ DisplayAll: РІС‹РІРѕРґРёС‚ СЃРїРёСЃРѕРє РјР°С€РёРЅ РІ РіР°СЂР°Р¶Рµ
 template <typename T>
 void ServiceStation<T>::Garage::DisplayAll() const {
     if (repairedCars.empty()) {

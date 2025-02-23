@@ -1,4 +1,4 @@
-#pragma once
+п»ї#pragma once
 #include <iostream>
 #include <vector>
 #include "Cars.h"
@@ -8,20 +8,20 @@ template <typename T>
 class ServiceStation {
 
 public:
-    ServiceStation(size_t limit); // Конструктор для установки лимита
-    // Метод AddCar: добавляет машину в СТО
+    ServiceStation(size_t limit); // РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РґР»СЏ СѓСЃС‚Р°РЅРѕРІРєРё Р»РёРјРёС‚Р°
+    // РњРµС‚РѕРґ AddCar: РґРѕР±Р°РІР»СЏРµС‚ РјР°С€РёРЅСѓ РІ РЎРўРћ
     void AddCar(const T& car);
-    // Метод RepairAll: чинит все машины и перемещает их в гараж
+    // РњРµС‚РѕРґ RepairAll: С‡РёРЅРёС‚ РІСЃРµ РјР°С€РёРЅС‹ Рё РїРµСЂРµРјРµС‰Р°РµС‚ РёС… РІ РіР°СЂР°Р¶
     void RepairAll();
 
-    // Метод DisplayGarage: выводит список машин в гараже
+    // РњРµС‚РѕРґ DisplayGarage: РІС‹РІРѕРґРёС‚ СЃРїРёСЃРѕРє РјР°С€РёРЅ РІ РіР°СЂР°Р¶Рµ
     void DisplayGarage() const;
 
 private:
-    std::vector<T> carsInService; // Список машин в сервисе
-    size_t limit; // Лимит на количество машин
+    std::vector<T> carsInService; // РЎРїРёСЃРѕРє РјР°С€РёРЅ РІ СЃРµСЂРІРёСЃРµ
+    size_t limit; // Р›РёРјРёС‚ РЅР° РєРѕР»РёС‡РµСЃС‚РІРѕ РјР°С€РёРЅ
 
-    // Вложенный шаблонный класс Garage
+    // Р’Р»РѕР¶РµРЅРЅС‹Р№ С€Р°Р±Р»РѕРЅРЅС‹Р№ РєР»Р°СЃСЃ Garage
     class Garage {
     private:
         std::vector<T> repairedCars;
@@ -32,6 +32,6 @@ private:
 
         void DisplayAll() const;
     };
-    Garage garage;// Объект гаража
+    Garage garage;// РћР±СЉРµРєС‚ РіР°СЂР°Р¶Р°
 };
 #include "ServiseStation.hpp"
