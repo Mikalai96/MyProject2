@@ -124,7 +124,7 @@ int main() {
             Correspondence doc(getCurrentDate(), topic, sender, "incoming");
 
             // Спрашиваем о прикреплении файла
-            std::cout << "Прикрепить PDF-файл? (1 - выбрать существующий, 2 - сканировать, 0 - нет): ";
+            std::cout << "Прикрепить PDF-файл? (1 - выбрать существующий, 0 - нет): ";
             int attachChoice;
             std::cin >> attachChoice;
             std::cin.ignore();
@@ -146,19 +146,19 @@ int main() {
                     }
                 }
             }
-            else if (attachChoice == 2) {
-                // Сканирование документа
-                std::cout << "Подготовьте документ для сканирования...\n";
-                attachmentPath = PdfManager::scanToPdf(fileManager.getStoragePath() + "/attachments");
+            //else if (attachChoice == 2) { НЕРЕАЛИЗОВАНАЯ ФУНКЦИЯ СКАНИРОВАНИЯ ДОКУМЕНТА. ЗАДАЧА ВЫЯСНИТЬ РЕАЛИЗАЦИЮ ПОДКЛЮЧЕНИЯ СКАНЕРА ИЛИ ПОДТЯГИВАНИЯ ИЗ СПИСКА ЗАРЕГИСТРИРОВАННЫХ В ОС
+            //    // Сканирование документа
+            //    std::cout << "Подготовьте документ для сканирования...\n";
+            //    attachmentPath = PdfManager::scanToPdf(fileManager.getStoragePath() + "/attachments");
 
-                if (!attachmentPath.empty()) {
-                    doc.setAttachmentPath(attachmentPath);
-                    std::cout << "Документ успешно отсканирован и прикреплен.\n";
-                }
-                else {
-                    std::cout << "Ошибка при сканировании документа.\n";
-                }
-            }
+            //    if (!attachmentPath.empty()) {
+            //        doc.setAttachmentPath(attachmentPath);
+            //        std::cout << "Документ успешно отсканирован и прикреплен.\n";
+            //    }
+            //    else {
+            //        std::cout << "Ошибка при сканировании документа.\n";
+            //    }
+            //}
 
             incomingJournal.addCorrespondence(doc);
             fileManager.saveJournal(incomingJournal);
@@ -191,7 +191,7 @@ int main() {
             Correspondence doc(getCurrentDate(), topic, recipient, "outgoing");
 
             // Спрашиваем о прикреплении файла
-            std::cout << "Прикрепить PDF-файл? (1 - выбрать существующий, 2 - сканировать, 0 - нет): ";
+            std::cout << "Прикрепить PDF-файл? (1 - выбрать существующий, 0 - нет): ";
             int attachChoice;
             std::cin >> attachChoice;
             std::cin.ignore();
@@ -214,20 +214,20 @@ int main() {
                     }
                 }
             }
-            else if (attachChoice == 2) {
-                // Сканирование документа
-                std::cout << "Подготовьте документ для сканирования...\n";
-                std::string scanDir = fileManager.getStoragePath() + "/outgoing_attachments";
-                attachmentPath = PdfManager::scanToPdf(scanDir);
+            //else if (attachChoice == 2) {
+            //    // Сканирование документа
+            //    std::cout << "Подготовьте документ для сканирования...\n";
+            //    std::string scanDir = fileManager.getStoragePath() + "/outgoing_attachments";
+            //    attachmentPath = PdfManager::scanToPdf(scanDir);
 
-                if (!attachmentPath.empty()) {
-                    doc.setAttachmentPath(attachmentPath);
-                    std::cout << "Документ успешно отсканирован и прикреплен.\n";
-                }
-                else {
-                    std::cout << "Ошибка при сканировании документа.\n";
-                }
-            }
+            //    if (!attachmentPath.empty()) {
+            //        doc.setAttachmentPath(attachmentPath);
+            //        std::cout << "Документ успешно отсканирован и прикреплен.\n";
+            //    }
+            //    else {
+            //        std::cout << "Ошибка при сканировании документа.\n";
+            //    }
+            //}
 
             outgoingJournal.addCorrespondence(doc);
             fileManager.saveJournal(outgoingJournal);
